@@ -601,4 +601,523 @@ button, input, select { font: inherit; }
   display: none;
   padding: 20px;
   margin-top: 20px;
-  background: #28dfff0
+  background: #28dfff0c;
+  border-left: 3px solid var(--blue);
+}
+
+.result h3 {
+  font: 700 24px Orbitron, sans-serif;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.result p {
+  color: #c4d2e7;
+  line-height: 1.6;
+  font-size: 14px;
+  margin-top: 7px;
+}
+
+.contact {
+  text-align: center;
+  padding: 110px 7%;
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(ellipse at 50% 100%,#234d712e,transparent 65%);
+}
+
+.contact h2 {
+  font: 900 clamp(34px,6vw,66px)/1.2 Orbitron, sans-serif;
+  margin: 25px 0;
+}
+
+.contact h2 span { color: var(--blue); }
+
+.contact p {
+  max-width: 520px;
+  margin: auto;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.contact .btn { margin-top: 28px; }
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+  padding: 27px 7%;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer strong {
+  font: 700 14px Orbitron, sans-serif;
+  color: white;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(22px);
+  transition: .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media(max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .hero-copy { text-align: center; }
+  .hero-copy .kicker { justify-content: center; }
+  .hero-copy > p { margin: auto; }
+  .actions, .hero-data { justify-content: center; }
+  .scene { min-height: 430px; }
+  .ring { width: 310px; }
+  .ring.r2 { width: 250px; }
+  .ring.r3 { width: 350px; }
+  .programs, .membership-grid { grid-template-columns: repeat(2,1fr); }
+  .experience, .bmi-grid { grid-template-columns: 1fr; }
+  .section-head { align-items: flex-start; flex-direction: column; }
+}
+
+@media(max-width: 620px) {
+  .nav { padding: 0 5%; height: 70px; }
+  .menu { display: block; }
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    right: 0;
+    padding: 22px 5%;
+    background: #0b111d;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links.open { display: flex; }
+  .nav-links .nav-button { text-align: center; }
+  .hero { padding: 125px 5% 55px; }
+  .hero h1 { letter-spacing: -2.5px; }
+  .hero-data { gap: 19px; }
+  .hero-data strong { font-size: 19px; }
+  .hero-data span { font-size: 10px; }
+  .scene { min-height: 340px; }
+  .ring { width: 240px; }
+  .ring.r2 { width: 195px; }
+  .ring.r3 { width: 270px; }
+  .energy-core { width: 165px; }
+  .hud { font-size: 8px; padding: 9px; }
+  .section { padding: 72px 5%; }
+  .programs, .membership-grid { grid-template-columns: 1fr; }
+  .program { min-height: 245px; }
+  .experience-art { min-height: 290px; }
+  .art-word { font-size: 55px; }
+  .calculator { padding: 21px; }
+  .contact { padding: 80px 5%; }
+  footer { padding: 25px 5%; }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+
+<body>
+
+<header class="nav">
+  <a class="brand" href="#home">NEXUS<span>4D</span></a>
+  <button class="menu" id="menu" aria-label="Toggle menu"
+          aria-expanded="false">☰</button>
+
+  <nav class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#programs">Training</a>
+    <a href="#experience">Experience</a>
+    <a href="#membership">Plans</a>
+    <a href="#bmi">BMI Tool</a>
+    <a class="nav-button" href="#contact">GET ACCESS ↗</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-copy">
+    <span class="kicker">Human performance reimagined</span>
+    <h1>
+      REDEFINE<br>
+      YOUR <span class="blue">POWER.</span><br>
+      <span class="ghost">ENTER 4D.</span>
+    </h1>
+    <p>
+      Step into a new training dimension. Discover an immersive fitness
+      experience built around movement, strength, focus and your next evolution.
+    </p>
+
+    <div class="actions">
+      <a class="btn btn-blue" href="#membership">UNLOCK YOUR POTENTIAL ↗</a>
+      <a class="btn btn-ghost" href="#programs">EXPLORE TRAINING</a>
+    </div>
+
+    <div class="hero-data">
+      <div><strong>4D</strong><span>Immersive concept</span></div>
+      <div><strong>06</strong><span>Training pathways</span></div>
+      <div><strong>∞</strong><span>Room to improve</span></div>
+    </div>
+  </div>
+
+  <div class="scene" aria-label="Animated 3D futuristic energy core">
+    <div class="ring"></div>
+    <div class="ring r2"></div>
+    <div class="ring r3"></div>
+
+    <div class="energy-core">
+      <div class="cube"></div>
+      <div class="cube c2"></div>
+      <div class="cube c3"></div>
+      <div class="core-light"></div>
+    </div>
+
+    <div class="hud hud-a">NEXUS SYSTEM <b>ONLINE</b></div>
+    <div class="hud hud-b">POWER LEVEL: <b>RISING</b></div>
+    <div class="hud hud-c">MODE: <b>4D ACTIVE</b></div>
+  </div>
+</section>
+
+<div class="scanline"></div>
+
+<section class="section" id="programs">
+  <div class="section-head reveal">
+    <div>
+      <span class="kicker">Your training universe</span>
+      <h2>FIND YOUR<br>FREQUENCY.</h2>
+    </div>
+    <p>Build a training routine that matches your goals, your pace and your ambition.</p>
+  </div>
+
+  <div class="programs">
+    <article class="program reveal">
+      <span class="number">PATHWAY / 01</span>
+      <div class="symbol">◈</div>
+      <h3>STRENGTH LAB</h3>
+      <p>Build strength and muscle with structured resistance training and progressive goals.</p>
+      <a href="#membership">EXPLORE PATHWAY ↗</a>
+    </article>
+
+    <article class="program reveal">
+      <span class="number">PATHWAY / 02</span>
+      <div class="symbol">ϟ</div>
+      <h3>VELOCITY</h3>
+      <p>Challenge your stamina, coordination and athletic movement through dynamic sessions.</p>
+      <a href="#membership">EXPLORE PATHWAY ↗</a>
+    </article>
+
+    <article class="program reveal">
+      <span class="number">PATHWAY / 03</span>
+      <div class="symbol">⌬</div>
+      <h3>BODY ARCHITECT</h3>
+      <p>Bring training and consistent habits together in a goal-oriented fitness plan.</p>
+      <a href="#membership">EXPLORE PATHWAY ↗</a>
+    </article>
+
+    <article class="program reveal">
+      <span class="number">PATHWAY / 04</span>
+      <div class="symbol">◎</div>
+      <h3>MOBILITY FLOW</h3>
+      <p>Work on flexibility, control, balance and range of motion.</p>
+      <a href="#membership">EXPLORE PATHWAY ↗</a>
+    </article>
+
+    <article class="program reveal">
+      <span class="number">PATHWAY / 05</span>
+      <div class="symbol">✳</div>
+      <h3>COACH MODE</h3>
+      <p>Get individual guidance and a routine tailored to your training experience.</p>
+      <a href="#contact">MEET YOUR COACH ↗</a>
+    </article>
+
+    <article class="program reveal">
+      <span class="number">PATHWAY / 06</span>
+      <div class="symbol">⟡</div>
+      <h3>RECOVERY ZONE</h3>
+      <p>Make recovery, rest and sustainable progress part of your training strategy.</p>
+      <a href="#contact">EXPLORE RECOVERY ↗</a>
+    </article>
+  </div>
+</section>
+
+<section class="section experience" id="experience">
+  <div class="experience-art reveal">
+    <div class="art-word">N//4D</div>
+  </div>
+
+  <div class="experience-copy reveal">
+    <span class="kicker">Not just another workout</span>
+    <h2>WELCOME TO<br>THE NEXT LEVEL.</h2>
+    <p>
+      NEXUS combines a futuristic visual identity with a practical approach
+      to fitness. Find your rhythm, build consistency and work toward goals
+      that matter to you.
+    </p>
+
+    <ul class="features">
+      <li>Immersive futuristic gym atmosphere</li>
+      <li>Strength and functional training areas</li>
+      <li>Programs for different experience levels</li>
+      <li>Personal training options</li>
+      <li>Goal-oriented fitness guidance</li>
+    </ul>
+
+    <a class="btn btn-blue" href="#contact">START YOUR JOURNEY ↗</a>
+  </div>
+</section>
+
+<section class="section" id="membership">
+  <div class="section-head reveal">
+    <div>
+      <span class="kicker">Choose your access</span>
+      <h2>SELECT YOUR<br>UPGRADE.</h2>
+    </div>
+    <p>Choose the level of access that suits your routine and training goals.</p>
+  </div>
+
+  <div class="membership-grid">
+    <article class="plan reveal">
+      <span class="plan-tag">ACCESS 01</span>
+      <h3>BASE</h3>
+      <p>Your foundation starts here.</p>
+      <div class="price">$25 <small>/ month</small></div>
+      <ul>
+        <li>Gym floor access</li>
+        <li>Standard equipment</li>
+        <li>Locker room access</li>
+        <li>Gym orientation</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost">CHOOSE BASE</a>
+    </article>
+
+    <article class="plan featured reveal">
+      <span class="plan-tag">ACCESS 02 / POPULAR</span>
+      <h3>PLUS</h3>
+      <p>More support for your progress.</p>
+      <div class="price">$55 <small>/ month</small></div>
+      <ul>
+        <li>Everything in Base</li>
+        <li>Group training options</li>
+        <li>Progress check-ins</li>
+        <li>Training plan consultation</li>
+      </ul>
+      <a href="#contact" class="btn btn-blue">CHOOSE PLUS</a>
+    </article>
+
+    <article class="plan reveal">
+      <span class="plan-tag">ACCESS 03</span>
+      <h3>PRIME</h3>
+      <p>A more personalized experience.</p>
+      <div class="price">$95 <small>/ month</small></div>
+      <ul>
+        <li>Everything in Plus</li>
+        <li>Personal coaching options</li>
+        <li>Customized workout plan</li>
+        <li>Priority consultation</li>
+      </ul>
+      <a href="#contact" class="btn btn-ghost">CHOOSE PRIME</a>
+    </article>
+  </div>
+
+  <p style="color:var(--muted);font-size:12px;margin-top:20px">
+    Example pricing in USD. Update these plans to match your actual gym.
+  </p>
+</section>
+
+<section class="section bmi-section" id="bmi">
+  <div class="bmi-grid">
+    <div class="bmi-copy reveal">
+      <span class="kicker">Personal performance tool</span>
+      <h2>KNOW YOUR<br>BASELINE.</h2>
+      <p>
+        Calculate your Body Mass Index using your height and weight.
+        BMI is a general screening measure and does not distinguish muscle
+        from fat or provide a complete assessment of your health.
+      </p>
+    </div>
+
+    <div class="calculator reveal">
+      <form id="bmiForm">
+        <div class="field">
+          <label for="unit">Units</label>
+          <select id="unit">
+            <option value="metric">Metric — kg and cm</option>
+            <option value="imperial">Imperial — lb and inches</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="weight" id="weightText">Weight (kg)</label>
+          <input id="weight" type="number" min="1" max="500"
+                 step="any" placeholder="Enter your weight" required>
+        </div>
+
+        <div class="field">
+          <label for="height" id="heightText">Height (cm)</label>
+          <input id="height" type="number" min="1" max="300"
+                 step="any" placeholder="Enter your height" required>
+        </div>
+
+        <button type="submit" class="btn btn-blue" style="width:100%">
+          CALCULATE MY BMI ↗
+        </button>
+      </form>
+
+      <div class="result" id="result" aria-live="polite">
+        <h3 id="bmiNumber"></h3>
+        <p id="bmiClass"></p>
+        <p id="bmiNote"></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <span class="kicker">Your next chapter begins now</span>
+  <h2>MAKE YOUR<br><span>NEXT MOVE.</span></h2>
+  <p>
+    Want to train with NEXUS? Reach out to ask about memberships,
+    coaching and visiting the gym.
+  </p>
+  <a class="btn btn-blue"
+     href="mailto:hello@nexus4d.example?subject=NEXUS%204D%20Gym%20Enquiry">
+     CONNECT WITH NEXUS ↗
+  </a>
+</section>
+</main>
+
+<footer>
+  <strong>NEXUS<span style="color:var(--blue)">4D</span></strong>
+  <span>BUILT FOR YOUR NEXT DIMENSION.</span>
+  <span>© <span id="year"></span> NEXUS FITNESS</span>
+</footer>
+
+<script>
+const menu = document.getElementById('menu');
+const navLinks = document.getElementById('navLinks');
+
+menu.addEventListener('click', () => {
+  const open = navLinks.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? '✕' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+    menu.textContent = '☰';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  revealObserver.observe(element);
+});
+
+const unit = document.getElementById('unit');
+const weightInput = document.getElementById('weight');
+const heightInput = document.getElementById('height');
+const result = document.getElementById('result');
+
+unit.addEventListener('change', () => {
+  const imperial = unit.value === 'imperial';
+
+  document.getElementById('weightText').textContent =
+    imperial ? 'Weight (lb)' : 'Weight (kg)';
+  document.getElementById('heightText').textContent =
+    imperial ? 'Height (inches)' : 'Height (cm)';
+
+  weightInput.placeholder = imperial ? 'e.g. 160' : 'e.g. 70';
+  heightInput.placeholder = imperial ? 'e.g. 68' : 'e.g. 175';
+
+  weightInput.max = imperial ? 1100 : 500;
+  heightInput.max = imperial ? 120 : 300;
+
+  result.style.display = 'none';
+});
+
+document.getElementById('bmiForm').addEventListener('submit', event => {
+  event.preventDefault();
+
+  const weight = Number(weightInput.value);
+  const height = Number(heightInput.value);
+  const imperial = unit.value === 'imperial';
+
+  if (!Number.isFinite(weight) || !Number.isFinite(height) ||
+      weight <= 0 || height <= 0) {
+    alert('Please enter a valid positive height and weight.');
+    return;
+  }
+
+  const kg = imperial ? weight * 0.45359237 : weight;
+  const metres = imperial ? height * 0.0254 : height / 100;
+
+  if (kg > 500 || metres > 3 || metres < 0.5) {
+    alert('Please check your measurements and try again.');
+    return;
+  }
+
+  const bmi = kg / (metres * metres);
+
+  if (!Number.isFinite(bmi) || bmi < 5 || bmi > 100) {
+    alert('Please check your measurements and try again.');
+    return;
+  }
+
+  let category;
+  let note;
+
+  if (bmi < 18.5) {
+    category = 'Below the standard adult BMI range';
+    note = 'Consider discussing your nutrition and training goals with a qualified health professional.';
+  } else if (bmi < 25) {
+    category = 'Within the standard adult BMI range';
+    note = 'Continue building sustainable habits around movement, nutrition and recovery.';
+  } else if (bmi < 30) {
+    category = 'Above the standard adult BMI range';
+    note = 'BMI is only one indicator and may not reflect muscle mass or individual health.';
+  } else {
+    category = 'Higher adult BMI range';
+    note = 'A qualified health professional can help interpret this result in the context of your overall health.';
+  }
+
+  document.getElementById('bmiNumber').textContent = 'BMI ' + bmi.toFixed(1);
+  document.getElementById('bmiClass').textContent = category;
+  document.getElementById('bmiNote').textContent = note;
+
+  result.style.display = 'block';
+});
+</script>
+
+</body>
+</html>
+```
